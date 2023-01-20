@@ -12,7 +12,9 @@ describe("Given I am connected as an employee", () => {
     test("Then ...", () => {
       const html = NewBillUI()
       document.body.innerHTML = html
-      //to-do write assertion
+      const file = new File(['hello'], 'hello.txt', { type: 'document/txt' })
+      const input = document.querySelector(`input[data-testid="file"]`)
+      console.log("File", input)
     })
   })
 })
