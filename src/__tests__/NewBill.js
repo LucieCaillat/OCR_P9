@@ -2,13 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { screen } from "@testing-library/dom"
-import NewBillUI from "../views/NewBillUI.js"
 import NewBill from "../containers/NewBill.js"
-import { localStorageMock } from "../__mocks__/localStorage.js";
-import router from '../app/Router';
-import { ROUTES, ROUTES_PATH } from '../constants/routes';
-
 
 describe("Unit test", () => {
 
@@ -35,13 +29,13 @@ describe("Unit test", () => {
           onNavigate: {},
           store: {},            
           localStorage: {}
-        });
+        })
         const mockAlert = jest.fn()
         global.alert = mockAlert
         objInstance.handleChangeFile({ preventDefault: () => true })
         expect(mockAlert.mock.calls).toHaveLength(1)
       })
-    });
+    })
 
     describe("when I upload a file with the good format", () => {
 
@@ -56,7 +50,7 @@ describe("Unit test", () => {
               return {
                 files: [goodFormatFile],
                 addEventListener: () => true,
-              };
+              }
             } else {
               return { addEventListener: () => true }
             }
