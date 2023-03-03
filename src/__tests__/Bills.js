@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-/*coucou*/
+/*coucou les amis*/
 
 import {screen, waitFor} from "@testing-library/dom";
 import BillsUI from "../views/BillsUI.js";
